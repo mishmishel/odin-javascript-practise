@@ -47,6 +47,57 @@
         const actual = max - 13;
         const percentage = actual / max;
         console.log(percentage);
+
+        // JavaScript Data Types
+
+        // Strings
+
+        const string = "The revolution will not be televised.";
+        console.log(string);
+        // const badString1 = This is a test; Missing quotes results in Uncaught SyntaxError
+
+        // Can choose single quotes (''), double quotes (""), or backticks (``) to wrap strings in.
+        const single = 'Single quotes';
+        const double = "Double quotes";
+        const backtick = `Backtick`;
+
+        console.log(single);
+        console.log(double);
+        console.log(backtick);
+
+        // Embedding Javascript
+        const name = "Chris"; 
+        const greeting = `Hello, ${name}`; // Strings declared using backticks are called a template literal. Can embed JavaScript in them, you can declare template literals over multiple lines.
+        console.log(greeting); // "Hello, Chris"
+
+        const one = "Hello, ";
+        const two = "how are you?";
+        const joined = `${one}${two}`;
+        console.log(joined); // "Hello, how are you?"
+
+        // Can include JavaScript expressions in template literals, as well as just variables.
+        const song = "Fight the Youth";
+        const score = 9;
+        const highestScore = 10;
+        const output = `I like the song ${song}. I gave it a score of ${
+        (score / highestScore) * 100
+        }%.`;
+        console.log(output); // "I like the song Fight the Youth. I gave it a score of 90%."
+
+        // Template literals respect line breaks in the source code, so can write strings that span multiple lines
+        const newline = `One day you finally knew
+        what you had to do, and began,`;
+        console.log(newline);
+
+        // To have the equivalent output using a normal string you'd have to include line break characters (\n) in the string
+        const newline2 = "One day you finally knew\nwhat you had to do, and began,";
+        console.log(newline2);
+
+        // String() function converts its argument to a string
+        const myNum2 = 123;
+        const myString2 = String(myNum2);
+        console.log(typeof myString2);
+        // string
     </script>
 </body>
 </html>
