@@ -98,6 +98,102 @@
         const myString2 = String(myNum2);
         console.log(typeof myString2);
         // string
+
+        // JavaScript String Length
+        let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let length = text.length; // length property returns the length of a string
+
+        // Extracting String Characters (4 methods)
+        let char = text.charAt(0); // charAt() method returns the character at a specified index (position) in a string
+
+        let char1 = text.charCodeAt(0); //charCodeAt() method returns the code of the character at a specified index in a string
+        // The method returns a UTF-16 code (an integer between 0 and 65535).
+
+        let code = text.codePointAt(0); // Get code point value at the first position in a string
+
+        let letter = text.at(2); // at() method returns character at a specified index in a string
+
+        let char2 = text[0]; // Property access - but unpredictable in JavaScript. Makes strings look like arrays, if no character is found, [] returns undefined while charAt() returns empty string
+        text[0] = "A"; // Gives no error, but does not work
+
+        // JavaScript String concat()
+        let text1 = "Hello";
+        let text2 = "World";
+        let text3 = text1.concat(" ", text2); // concat() joins two or more strings
+
+        // All string methods return a new string, they don't modify the original string.
+        // Formally, strings are immmutable, cannot be changed, only replaced.
+
+        // Extracting String Parts
+
+        // slice() - extracts part of a string, returns extracted part in a new string
+        let text = "Apple, Banana, Kiwi";
+        let part = text.slice(7, 13); // takes two parameters, start position and end position (end not included)
+
+        // If you omit second parameter, method will slice out rest of the string
+        let part2 = text.slice(7);
+
+        // If a parameter is negative, the position is counted from the end of the string
+        let part3 = text.slice(-12);
+
+        // substring() - similar to slice, but start and end values less than 0 treated as 0
+        let part4 = text.substring(7, 13);
+
+        // Converting to Upper and Lower Case
+        let str1 = 'Hello World!';
+        let str2 = str1.toUpperCase();
+        let str3 = str1.toLowerCase();
+
+        // trim() method removes whitespace from both sides of a string
+        let text4 = "    Hello World!   ";
+        let text5 = text4.trim();
+
+        // trimStart() method works like trim() but removes whitespace only from the start of the string
+        let text6 = text4.trimStart();
+
+        // trimEnd() method works like trim(), but removes whitespace only from the end of a string
+        let text7 = text4.trimEnd();
+
+        // String Padding
+
+        // padStart() method pads a string from the start
+        let text8 = "5";
+        let padded = text8.padStart(4, "0"); // Pad a string with 0 until it reaches the length 4
+        let padded1 = text8.padStart(4,"x"); // Pad a string with x until it reaches the length 4
+
+        // padStart() is a string method, to pad a number, convert number to a string first
+
+        // padEnd() method pads a string from the end
+        let padded2 = text8.padEnd(4, "0");
+
+        // repeat() - returns a new string with a number of copies of a string, does not modify original string
+        let text9 = "Hello World!";
+        let result = text9.repeat(2);
+
+        // replace() method replaces specified value with another value in a string - does not change string it is called on, returns new string
+        let text10 = "Please visit Microsoft!";
+        let newText = text10.replace("Microsoft", "W3Schools");
+
+        // By default, replace() method replaces only the first match, is case sensitive
+
+        // To replace case insensitive, use a regular expression with an /i flag
+        let newText2 = text10.replace(/MICROSOFT/i, "W3Schools");
+
+        // To replace all matches, use a regular expression with a /g flag (global match)
+        let text11 = "Please visit Microsoft and Microsoft!";
+        let newText3 = text11.replace(/Microsoft/g, "W3Schools");
+
+        // Converting a String to an Array
+        // A string can be converted to an array with the split() method
+
+        text.split(",")    // Split on commas
+        text.split(" ")    // Split on spaces
+        text.split("|")    // Split on pipe
+
+        // If the separator is ommitted, the returned array will contain the whole string in index[0].
+        // If the separator is "", the returned array will be an array of single characters.
+
+        text.split("")
     </script>
 </body>
 </html>
