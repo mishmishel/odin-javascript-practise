@@ -238,6 +238,58 @@
         const message = favoriteAnimal('Goat')
         console.log(message)
 
+        // If function called but an argument is not provided, corresponding value becomes undefined
+
+        // Default values
+        function showMessage(from, text="no text given") {
+            alert(from + ": " + text);
+        }
+
+        showMessage("Ann"); // Ann: no text given
+
+        function exampleMessage(from, text=showMesssage()) {
+            // showMessage() only executed if no text given
+            // Its result becomes the value of the text
+        }
+
+        // Function Expression
+        let sayHi = function() {
+            alert("Hello");
+        }
+
+        function sayHi2() {
+            alert( "Hello" );
+        }
+
+        alert( sayHi2 ); // shows the function code
+        // the last line does not run the function, because there are no parentheses after sayHi
+
+        // Functions are values
+
+        // We can copy a function to another variable:
+
+        function sayHi3() {   // (1) create
+            alert( "Hello" );
+        }
+
+        let func = sayHi3;    // (2) copy
+
+        func(); // Hello     // (3) run the copy (it works)!
+        sayHi3(); // Hello    //     this still works too (why wouldn't it)
+
+        // Function Expression vs. Function Declaration
+
+        // Function Declaration: a function, declared as a separate statement, in the main code flow
+        // A Function Declaration can be called earlier than it is defined.
+        function sum(a, b) {
+            return a + b;
+        }
+
+        // Function Expression: a function, created inside an expression or inside another syntax construct. 
+        // A Function Expression is created when the execution reaches it and is usable only from that moment.
+        let sum1 = function(a, b) {
+            return a + b;
+        };
     </script>
 </body>
 </html>
