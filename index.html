@@ -127,17 +127,17 @@
         // Extracting String Parts
 
         // slice() - extracts part of a string, returns extracted part in a new string
-        let text = "Apple, Banana, Kiwi";
-        let part = text.slice(7, 13); // takes two parameters, start position and end position (end not included)
+        let fruit = "Apple, Banana, Kiwi";
+        let part = fruit.slice(7, 13); // takes two parameters, start position and end position (end not included)
 
         // If you omit second parameter, method will slice out rest of the string
-        let part2 = text.slice(7);
+        let part2 = fruit.slice(7);
 
         // If a parameter is negative, the position is counted from the end of the string
-        let part3 = text.slice(-12);
+        let part3 = fruit.slice(-12);
 
         // substring() - similar to slice, but start and end values less than 0 treated as 0
-        let part4 = text.substring(7, 13);
+        let part4 = fruit.substring(7, 13);
 
         // Converting to Upper and Lower Case
         let str1 = 'Hello World!';
@@ -206,24 +206,26 @@
         }
 
         // Switch Statements
-        switch (expression) {
-            case choice1:
-                // run this code
-                break;
 
-            case choice2:
-                // run this code instead
-                break;
+        // switch (expression) {
+        //     case choice1:
+        //         // run this code
+        //         break;
 
-            // include as many cases as you like
+        //     case choice2:
+        //         // run this code instead
+        //         break;
 
-            default:
-                // actually, just run this code
-                break;
-        }
+        //     // include as many cases as you like
+
+        //     default:
+        //         // actually, just run this code
+        //         break;
+        // }
 
         // Ternary Operator
 
+        isBirthday = true;
         const greeting1 = isBirthday ? "Happy birthday Mrs. Smith — we hope you have a great day!" : "Good morning Mrs. Smith."
         
         // condition ? run this code : run this code instead
@@ -290,6 +292,34 @@
         let sum1 = function(a, b) {
             return a + b;
         };
+
+        // Practise
+        function add7(num) {
+            return num + 7;
+        }
+
+        console.log(add7(10));
+
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        console.log(multiply(2,3));
+
+        function capitalize(str) {
+            lowerstr = str.toLowerCase();
+            return str.charAt(0).toUpperCase() + lowerstr.slice(1);
+        }
+
+        console.log(capitalize('Abcd'));
+        console.log(capitalize('ABCD'));
+        console.log(capitalize('aBcD'));
+
+        function lastLetter(str) {
+            return str[str.length - 1];
+        }
+
+        console.log(lastLetter('Abcd'));
     </script>
 </body>
 </html>
