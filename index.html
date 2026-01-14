@@ -326,6 +326,54 @@
         // SyntaxError: occurs when the code you are trying to run is not written correctly, i.e., in accordance with the grammatical rules of JavaScript.
         // TypeError: Thrown when 1. an operand or argument passed to a function is incompatible with the type expected by that operator or function
         // 2. or when attempting to modify a value that cannot be changed 3. or when attempting to use a value in an inappropriate way
+
+        // JavaScript Loops
+        const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+        for (const cat of cats) {
+            console.log(cat);
+        }
+
+        // map() calls the function once for each item in the array, passing in the item. 
+        // It then adds the return value from each function call to a new array, and finally returns the new array
+        const upperCats = cats.map(toUpper);
+
+        // filter()
+        function lCat(cat) {
+            return cat.startsWith("L");
+        }
+
+        // with filter, function we pass in returns a boolean: if it returns true, then the item is included in the new array.
+        const filtered = cats.filter(lCat);
+
+        // map() and filter() are both often used with function expressions
+
+        // for i loop
+        for (let i = 0; i < cats.length; i++) {
+            console.log(cats[i]);
+        }
+
+        const cats1 = ["Pete", "Biggles", "Jasmine"];
+
+        let myFavoriteCats = "My cats are called ";
+
+        for (const cat of cats1) {
+            myFavoriteCats += `${cat}, `;
+        }
+
+        console.log(myFavoriteCats); // "My cats are called Pete, Biggles, Jasmine, "
+
+        // Want to handle last case differently
+        for (let i = 0; i < cats.length; i++) {
+            if (i === cats.length - 1) {
+                // We are at the end of the array
+                myFavoriteCats += `and ${cats[i]}.`;
+            } else {
+                myFavoriteCats += `${cats[i]}, `;
+            }
+        }
+
+        console.log(myFavoriteCats); // "My cats are called Pete, Biggles, and Jasmine."
     </script>
 </body>
 </html>
