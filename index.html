@@ -374,6 +374,60 @@
         }
 
         console.log(myFavoriteCats); // "My cats are called Pete, Biggles, and Jasmine."
+
+        for (let i = 2; i < 10; i++) {
+            if (i % 2 == 0) {
+                console.log(i);
+            }
+        }
+
+        let x = 0;
+        while (x < 3) {
+            console.log('number ' + x + '!');
+        }
+
+        let num3;
+        do {
+            num3 = prompt("Enter number greater than 100: ", 0);
+        } while (num <= 100 && num); // The check && num is false when num is null or an empty string. 
+
+        let n = 10;
+
+        // Labels for break/continue
+        // A label is an identifier with a colon before a loop
+
+        // labelName: for (...) {
+            // ...
+        // }
+
+        // The break <labelName> statement in the loop below breaks out to the label
+        outer: for (let i = 0; i < 3; i++) {
+
+            for (let j = 0; j < 3; j++) {
+
+                let input = prompt(`Value at coords (${i},${j})`, '');
+
+                // if an empty string or canceled, then break out of both loops
+                if (!input) break outer; // (*)
+
+                // do something with the value...
+            }
+        }
+
+        alert('Done!');
+
+        // Finding primes
+        nextPrime:
+        for (let i = 2; i <= n; i++) { // for each i...
+
+            for (let j = 2; j < i; j++) { // look for a divisor..
+                if (i % j == 0) continue nextPrime; // not a prime, go next i
+            }
+
+            alert( i ); // a prime
+        }
+
+
     </script>
 </body>
 </html>
