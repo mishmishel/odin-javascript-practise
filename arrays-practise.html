@@ -21,10 +21,11 @@
         let border = "border-left-width";
         console.log(camelize(border));
 
+        // Iterated Version
         function filterRange(arr, a, b) {
             new_arr = []
             for (let i = 0; i < arr.length; i++) {
-                if (arr[i] > a && arr[i] < b) {
+                if (arr[i] >= a && arr[i] <= b) {
                     new_arr.push(arr[i]);
                 }
             }
@@ -36,6 +37,14 @@
         let filtered = filterRange(arr, 1, 4);
         console.log(arr);
         console.log(filtered);
+
+        // Using filter function
+        function filterRange_v2(arr, a, b) {
+            return arr.filter((num) => (num >= a && num <= b));
+        }
+
+        let filtered_v2 = filterRange_v2(arr, 1, 4);
+        console.log(filtered_v2);
     </script>
 </body>
 </html>
