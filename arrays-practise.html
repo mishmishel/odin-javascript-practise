@@ -45,6 +45,35 @@
 
         let filtered_v2 = filterRange_v2(arr, 1, 4);
         console.log(filtered_v2);
+
+        function filterRangeInPlace(arr, a, b) {
+            for (let i = arr.length; i >= 0; i--) {
+                if (arr[i] < a || arr[i] > b) {
+                    arr.splice(i, 1); // start, deleteCount
+                }
+            }
+            return arr;
+        }
+
+        let inPlaceFiltered = filterRangeInPlace(arr, 1, 4);
+        console.log(inPlaceFiltered);
+
+        // Sort in decreasing order
+        let arr2 = [5, 2, 1, -10, 8];
+        arr2.sort((a, b) => b - a);
+
+        console.log(arr2);
+
+        // Copy and sort array
+        let arr3 = ["HTML", "JavaScript", "CSS"];
+
+        function copySorted(arr) {
+            return arr.toSorted();
+        }
+
+        let sortedCopy = copySorted(arr3);
+        console.log(sortedCopy);
+        console.log(arr3);
     </script>
 </body>
 </html>
