@@ -122,6 +122,57 @@
 
         let names = users.map(getName);
         console.log(names);
+
+        // Sort users by age
+        function sortByAge(users) {
+            users.sort((usera, userb) => usera.age - userb.age);
+        }
+        sortByAge(users)
+        console.log('Sort by age:');
+        console.log(users);
+
+        // Get average age
+        function getAverageAge(users) {
+            totalUsers = 0
+            sum = 0
+            for (const user of users) {
+                sum += user.age;
+                totalUsers += 1;
+            }
+            return sum / totalUsers;
+        }
+        
+        console.log('Average age:');
+        console.log(getAverageAge(users));
+
+        // Map to Objects
+        let john1 = { name: "John", surname: "Smith", id: 1 };
+        let pete1 = { name: "Pete", surname: "Hunt", id: 2 };
+        let mary1 = { name: "Mary", surname: "Key", id: 3 };
+
+        users1 = [john1, pete1, mary1];
+
+        let users1Mapped = users1.map(user => ({
+            fullName: `${user.name} ${user.surname}`,
+            id: user.id
+        }));
+        console.log(users1Mapped);
+
+        // Create keyed object from array
+        let users2 = [
+            {id: 'john', name: "John Smith", age: 20},
+            {id: 'ann', name: "Ann Smith", age: 24},
+            {id: 'pete', name: "Pete Peterson", age: 31},
+        ];
+
+        function groupById(array) {
+            return array.reduce((obj, value) => {
+                obj[value.id] = value;
+                return obj;
+            }, {})
+        }
+
+        console.log(groupById(users2));
     </script>
 </body>
 </html>
